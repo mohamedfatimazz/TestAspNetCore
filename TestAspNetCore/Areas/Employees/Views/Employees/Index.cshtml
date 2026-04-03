@@ -1,0 +1,46 @@
+﻿@model IEnumerable<TestAspNetCore.Models.Employee>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container p-3 bg-body-secondary">
+    <partial name="_Notifications" />
+    <div class="row pt-4">
+        <div class="col-6"><h2>Employees View</h2></div>
+        <div class="col-6 text-end "><a asp-controller="Employees" asp-action="New" class="btn btn-dark"> <i class="bi bi-plus-circle-fill"></i>&nbsp; Add New </a></div>
+    </div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Email</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model == null)
+            {
+                <tr>
+                    <td colspan="2">No Employees found.</td>
+                </tr>
+                return;
+            }
+            @foreach (var employee in Model)
+            {
+                <tr class="table-dark">
+                    <td scope="row" width="30%">@employee.EmployeeName</td>
+                    <td scope="row" width="20%">@employee.EmployeePhone</td>
+                    <td scope="row" width="30%">@employee.EmployeeEmail</td>
+                    <td scope="row"><a asp-controller="Employees" asp-action="Edit" asp-route-id="@employee.Id" class="btn btn-sm btn-success"><i class="bi bi-pencil-fill"></i></a></td>
+                    <td scope="row"><a asp-controller="Employees" asp-action="Delete" asp-route-id="@employee.Id" class="btn btn-sm btn-primary"><i class="bi bi-trash3-fill"></i></a></td>
+
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,50 @@
+﻿@model Item
+@{
+    ViewData["Title"] = "Edit";
+}
+<form method="post" enctype="multipart/form-data">
+    <div class="border p-3 mt-4 bg-body-secondary " style="background-color:lightslategray ">
+        <div class="row pb-2">
+            <h2 class="text-bg-dark">Edit Item</h2>
+            <hr />
+        </div>
+        <div asp-validation-summary="All"></div>
+        <div class="mb-3">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Price"></label>
+            <input asp-for="Price" class="form-control" />
+            <span asp-validation-for="Price" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="CatogoreId"></label>
+            <select asp-for="CatogoreId" class="form-control" asp-items="@ViewBag.Categorecs"> </select>
+            <span asp-validation-for="CatogoreId" class="text-bg-danger"></span>
+        </div>
+        <div>
+            <input type="file" asp-for="ClientFile" onchange="loadFile(event)" />
+            <img id="myImg" src="~/Images/@Model.ImagePath"+" height="200" />
+            
+        </div>
+        <hr />
+        <br />
+        <button type="submit" class="btn btn-success" style="width:150px"> Save </button>
+        <a asp-action="Index" asp-controller="Items" class="btn btn-primary" style="width:150px">back to items</a>
+    </div>
+</form>
+@section scripts {
+    <partial name="_ValidationScriptsPartial.cshtml" />
+    <script>
+        var loadFile =function(event){
+        var reader = new FileReader();
+        reader.onload=function(){
+        var myImg = document.getElementById('myImg');
+        myImg.src = reader.result;
+        }
+        reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
+}
