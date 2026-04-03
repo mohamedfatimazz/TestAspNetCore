@@ -1,0 +1,47 @@
+﻿@model TestAspNetCore.Models.Employee
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<form method="post">
+    <div class="border p-3 mt-4 bg-body-secondary " style="background-color:lightslategray ">
+        <div class="row pb-2">
+            <h2 class="text-bg-dark">Edit Employee</h2>
+            <hr />
+        </div>
+        <div asp-validation-summary="All"></div>
+        <div class="mb-3">
+            <label asp-for="EmployeeName"></label>
+            <input asp-for="EmployeeName" class="form-control" />
+            <span asp-validation-for="EmployeeName" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="EmployeePhone"></label>
+            <input asp-for="EmployeePhone" class="form-control" />
+            <span asp-validation-for="EmployeePhone" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="EmployeeEmail"></label>
+            <input asp-for="EmployeeEmail" class="form-control" />
+            <span asp-validation-for="EmployeeEmail" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="EmployeeAge"></label>
+            <input asp-for="EmployeeAge" type="number" class="form-control" />
+            <span asp-validation-for="EmployeeAge" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="EmployeeSalary"></label>
+            <input asp-for="EmployeeSalary" type="number" class="form-control" />
+            <span asp-validation-for="EmployeeSalary" class="text-danger"></span>
+        </div>
+        <hr />
+        <br />
+        <button type="submit" class="btn btn-success" style="width:150px"> Save </button>
+        <a asp-action="Index" asp-controller="Employees" class="btn btn-primary" style="width:150px">back to items</a>
+    </div>
+</form>
+@section scripts {
+    <partial name="_ValidationScriptsPartial.cshtml" />
+}

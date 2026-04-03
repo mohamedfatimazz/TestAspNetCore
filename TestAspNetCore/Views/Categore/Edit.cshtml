@@ -1,0 +1,40 @@
+﻿@model Categore
+@{
+    ViewData["Titel"] = "Categort View";
+}
+<form method="post" enctype="multipart/form-data">
+    <div class="border p-3 mt-4 bg-body-secondary " style="background-color:lightslategray ">
+        <div class="row pb-2">
+            <h2 class="text-bg-dark">Edit Categore</h2>
+            <hr />
+        </div>
+        <div asp-validation-summary="All"></div>
+        <div class="mb-3">
+            <label asp-for="Name" class=" form-label>"></label>
+            <input asp-for="Name" class="form-control">
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div>
+            <input type="file" asp-for="ClientFile" onchange="loadFile(event)" />
+            <img id="myImg" src="@Model.ImgSRC" height="200" />
+        </div>
+        <br />
+        <hr />
+        <button type="submit" class="btn btn-success" style="width:150px"> Save </button>
+        <a asp-action="Index" asp-controller="Categore" class="btn btn-primary">Back to Categores</a>
+
+    </div>
+</form>
+@section scripts {
+    <partial name="_ValidationScriptsPartial.cshtml" />
+    <script>
+        var loadFile =function(event){
+        var reader = new FileReader();
+        reader.onload=function(){
+        var myImg = document.getElementById('myImg');
+        myImg.src = reader.result;
+        }
+        reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
+}

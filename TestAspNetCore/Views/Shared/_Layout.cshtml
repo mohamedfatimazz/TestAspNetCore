@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TestAbsApiCore</title>
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/css/bootSwatchStyle.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/TestAbsApiCore.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Test</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarColor02">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" asp-area="" asp-controller="Categore" asp-action="Index">Categore</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" asp-area="" asp-controller="Items" asp-action="Index">Items</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" asp-area="Employees" asp-controller="Home" asp-action="Index">Employees</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" asp-area="Employees" asp-controller="Employees" asp-action="Index">EmployeesList</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">اسقاط</font></font></a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">فعل</font></font></a>
+                                <a class="dropdown-item" href="#"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">إجراء آخر</font></font></a>
+                                <a class="dropdown-item" href="#"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">هناك شيء آخر هنا</font></font></a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">رابط منفصل</font></font></a>
+                            </div>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-sm-2" type="search" placeholder="يبحث">
+                        <button class="btn btn-secondary my-2 my-sm-0" type="submit" fdprocessedid="9hwliw"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">يبحث</font></font></button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2026 - TestAbsApiCore - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
