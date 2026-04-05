@@ -120,7 +120,7 @@ namespace TestAspNetCore.Areas.Identity.Pages.Account
             if (ModelState.IsValid)
             {
                 var user = CreateUser();
-               
+             //  user.UserName = Input.UserName;
                 user.PhoneNumber = Input.PhoneNumber;
                 user.EmailConfirmed = true;
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
