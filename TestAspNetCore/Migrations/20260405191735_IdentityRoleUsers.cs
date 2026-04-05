@@ -7,7 +7,7 @@
 namespace TestAspNetCore.Migrations
 {
     /// <inheritdoc />
-    public partial class Identityrolesusers : Migration
+    public partial class IdentityRoleUsers : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -17,9 +17,9 @@ namespace TestAspNetCore.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "177b6ff0-1a70-40f3-8b3e-69e558ca7bf7", "d7682cdf-5d05-4c4e-84c4-42c820b78c73", "Admin", "Admin" },
-                    { "d1f7b06b-5a12-4926-ac85-91967dc8f1a7", "8b0a936b-9c2f-45f4-aefe-3a40b74f6fd3", "User", "User" },
-                    { "e1858198-a035-48cf-901d-a66e04b35ac1", "bbaa060f-3135-4b1f-82ba-55b8ee7af52e", "Employee", "Employee" }
+                    { "1d6b9726-98bc-4465-a6ad-17e70f6f3a8b", "a5b2026c-25bd-4280-85cb-68bc865b0a7f", "Admin", "admin" },
+                    { "7c20ff38-5d29-4feb-9271-2bcf3bb10af5", "5eaa0b93-6cf1-4cfb-8863-9f345eebc528", "User", "user" },
+                    { "d2bb88cd-9ab6-4fec-979a-38af526edc8d", "197c50bf-8396-4153-ba5f-cc567d2f39d4", "Employee", "employee" }
                 });
         }
 
@@ -29,17 +29,17 @@ namespace TestAspNetCore.Migrations
             migrationBuilder.DeleteData(
                 table: "AspNetRoles",
                 keyColumn: "Id",
-                keyValue: "177b6ff0-1a70-40f3-8b3e-69e558ca7bf7");
+                keyValue: "1d6b9726-98bc-4465-a6ad-17e70f6f3a8b");
 
             migrationBuilder.DeleteData(
                 table: "AspNetRoles",
                 keyColumn: "Id",
-                keyValue: "d1f7b06b-5a12-4926-ac85-91967dc8f1a7");
+                keyValue: "7c20ff38-5d29-4feb-9271-2bcf3bb10af5");
 
             migrationBuilder.DeleteData(
                 table: "AspNetRoles",
                 keyColumn: "Id",
-                keyValue: "e1858198-a035-48cf-901d-a66e04b35ac1");
+                keyValue: "d2bb88cd-9ab6-4fec-979a-38af526edc8d");
         }
     }
 }

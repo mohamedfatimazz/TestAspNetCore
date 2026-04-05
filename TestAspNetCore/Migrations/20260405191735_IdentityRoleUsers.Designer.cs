@@ -12,8 +12,8 @@ using TestAspNetCore.Data;
 namespace TestAspNetCore.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260405184819_Identityrolesusers")]
-    partial class Identityrolesusers
+    [Migration("20260405191735_IdentityRoleUsers")]
+    partial class IdentityRoleUsers
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -54,24 +54,24 @@ namespace TestAspNetCore.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "177b6ff0-1a70-40f3-8b3e-69e558ca7bf7",
-                            ConcurrencyStamp = "d7682cdf-5d05-4c4e-84c4-42c820b78c73",
+                            Id = "1d6b9726-98bc-4465-a6ad-17e70f6f3a8b",
+                            ConcurrencyStamp = "a5b2026c-25bd-4280-85cb-68bc865b0a7f",
                             Name = "Admin",
-                            NormalizedName = "Admin"
+                            NormalizedName = "admin"
                         },
                         new
                         {
-                            Id = "d1f7b06b-5a12-4926-ac85-91967dc8f1a7",
-                            ConcurrencyStamp = "8b0a936b-9c2f-45f4-aefe-3a40b74f6fd3",
+                            Id = "7c20ff38-5d29-4feb-9271-2bcf3bb10af5",
+                            ConcurrencyStamp = "5eaa0b93-6cf1-4cfb-8863-9f345eebc528",
                             Name = "User",
-                            NormalizedName = "User"
+                            NormalizedName = "user"
                         },
                         new
                         {
-                            Id = "e1858198-a035-48cf-901d-a66e04b35ac1",
-                            ConcurrencyStamp = "bbaa060f-3135-4b1f-82ba-55b8ee7af52e",
+                            Id = "d2bb88cd-9ab6-4fec-979a-38af526edc8d",
+                            ConcurrencyStamp = "197c50bf-8396-4153-ba5f-cc567d2f39d4",
                             Name = "Employee",
-                            NormalizedName = "Employee"
+                            NormalizedName = "employee"
                         });
                 });
 

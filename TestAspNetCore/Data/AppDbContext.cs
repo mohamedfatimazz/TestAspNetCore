@@ -17,9 +17,8 @@ namespace TestAspNetCore.Data
 
         override protected void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
-            // Important: let IdentityDbContext configure identity entity keys/mappings
-            base.OnModelCreating(modelBuilder);
+           
+            
 
             modelBuilder.Entity<Categore>().HasData(
                 new Categore() { Id = 1, Name = "SelectCategore" },
@@ -28,11 +27,13 @@ namespace TestAspNetCore.Data
                 new Categore() { Id = 4, Name = "Computer " }
             );
             modelBuilder.Entity<IdentityRole>().HasData(
-                new IdentityRole { Id = Guid.NewGuid().ToString(), Name = "Admin", NormalizedName = "Admin",ConcurrencyStamp=Guid.NewGuid().ToString() },
-                new IdentityRole { Id = Guid.NewGuid().ToString(), Name = "User", NormalizedName = "User", ConcurrencyStamp = Guid.NewGuid().ToString() },
-                new IdentityRole { Id = Guid.NewGuid().ToString(), Name = "Employee", NormalizedName = "Employee", ConcurrencyStamp = Guid.NewGuid().ToString() }
+                new IdentityRole() { Id = Guid.NewGuid().ToString(), Name = "Admin", NormalizedName = "admin",ConcurrencyStamp=Guid.NewGuid().ToString() },
+                new IdentityRole() { Id = Guid.NewGuid().ToString(), Name = "User", NormalizedName = "user", ConcurrencyStamp = Guid.NewGuid().ToString() },
+                new IdentityRole() { Id = Guid.NewGuid().ToString(), Name = "Employee", NormalizedName = "employee", ConcurrencyStamp = Guid.NewGuid().ToString() }
 
                 );
+            // Important: let IdentityDbContext configure identity entity keys/mappings
+            base.OnModelCreating(modelBuilder);
         }
     }
 }
