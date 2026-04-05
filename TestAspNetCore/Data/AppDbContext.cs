@@ -17,6 +17,7 @@ namespace TestAspNetCore.Data
 
         override protected void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             // Important: let IdentityDbContext configure identity entity keys/mappings
             base.OnModelCreating(modelBuilder);
 
