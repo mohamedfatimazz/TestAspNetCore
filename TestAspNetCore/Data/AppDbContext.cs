@@ -27,6 +27,12 @@ namespace TestAspNetCore.Data
                 new Categore() { Id = 3, Name = "Laptop " },
                 new Categore() { Id = 4, Name = "Computer " }
             );
+            modelBuilder.Entity<IdentityRole>().HasData(
+                new IdentityRole { Id = Guid.NewGuid().ToString(), Name = "Admin", NormalizedName = "Admin",ConcurrencyStamp=Guid.NewGuid().ToString() },
+                new IdentityRole { Id = Guid.NewGuid().ToString(), Name = "User", NormalizedName = "User", ConcurrencyStamp = Guid.NewGuid().ToString() },
+                new IdentityRole { Id = Guid.NewGuid().ToString(), Name = "Employee", NormalizedName = "Employee", ConcurrencyStamp = Guid.NewGuid().ToString() }
+
+                );
         }
     }
 }
