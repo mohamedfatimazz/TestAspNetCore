@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using TestAspNetCore.Data;
 using TestAspNetCore.Models;
 
 namespace TestAspNetCore.Areas.Employees.Controllers
 {
+    [Authorize]
     public class EmployeesController : Controller
     {
         public EmployeesController(AppDbContext context)

@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using TestAspNetCore.Models;
 using TestAspNetCore.Repository.Base;
 using TestAspNetCore.UnitOFWork.Base;
 
 namespace TestAspNetCore.Controllers
 {
+    [Authorize]
     public class CategoreController : Controller
     {
         public CategoreController(IUnitOFWork unitOFWork)

@@ -31,14 +31,11 @@
                             <a class="nav-link active" asp-area="" asp-controller="Items" asp-action="Index">Items</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" asp-area="Employees" asp-controller="Home" asp-action="Index">Employees</a>
+                            <a class="nav-link active" asp-area="Employees" asp-controller="Employees" asp-action="Index">Employees</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" asp-area="Employees" asp-controller="Employees" asp-action="Index">EmployeesList</a>
-                        </li>
-                        <li class="nav-item">
+                     <!--  <li class="nav-item">
                             <a class="nav-link active" asp-area="Identity" asp-page="/Account/Register">New User</a>
-                        </li>
+                        </li>-->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">اسقاط</font></font></a>
                             <div class="dropdown-menu">
@@ -54,8 +51,10 @@
                         <input class="form-control me-sm-2" type="search" placeholder="يبحث">
                         <button class="btn btn-secondary my-2 my-sm-0" type="submit" fdprocessedid="9hwliw"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">يبحث</font></font></button>
                     </form>
+                    <partial class="alert-link alert-success" name="_LoginPartial" />
                 </div>
             </div>
+          
         </nav>
     </header>
     <div class="container">
