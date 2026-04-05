@@ -15,7 +15,7 @@ namespace TestAspNetCore.Data
         public DbSet<Categore> Categorecs { get; set; }
         public DbSet<Employee> Employee { get; set; }
         override protected void OnModelCreating(ModelBuilder modelBuilder)
-        { 
+        {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Categore>().HasData(
                 new Categore() { Id = 1, Name = "SelectCategore" },
