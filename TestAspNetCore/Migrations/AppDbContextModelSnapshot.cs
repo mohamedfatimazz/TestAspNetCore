@@ -241,7 +241,7 @@ namespace TestAspNetCore.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categorecs");
+                    b.ToTable("Categorecs", (string)null);
 
                     b.HasData(
                         new
@@ -294,7 +294,7 @@ namespace TestAspNetCore.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Employee");
+                    b.ToTable("Employee", (string)null);
                 });
 
             modelBuilder.Entity("TestAspNetCore.Models.Item", b =>
@@ -325,7 +325,7 @@ namespace TestAspNetCore.Migrations
 
                     b.HasIndex("CatogoreId");
 
-                    b.ToTable("Items");
+                    b.ToTable("Items", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
